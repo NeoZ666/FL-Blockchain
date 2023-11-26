@@ -1,0 +1,23 @@
+{
+  "manifest_version": 3,
+  "name": "AI Paragraph Selector",
+  "version": "1.0",
+  "description": "Select a paragraph and send it to the backend with AI processing.",
+  "permissions": ["activeTab", "contextMenus"],
+  "icons": {
+    "48": "icons/icon.png"
+  },
+  "action": {
+    "default_icon": "icons/icon.png",
+    "default_popup": "popups/popup.html"
+  },
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": ["scripts/content-script.js"]
+    }
+  ],
+  "background": {
+    "service_worker": "service-worker.js"
+  }
+}
