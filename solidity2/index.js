@@ -5,11 +5,10 @@ const contractAddress = '0x68a14B3a0Ec10D56bc8040B379373f810C476871';
 
 const web3 = new Web3(window.ethereum);
 const contract = new web3.eth.Contract(contractABI, contractAddress);
-const ethereum = new MetaMaskSDK({})
 
 async function sendLinkToWallet(walletAddress) {
     try {
-        const accounts = await ethereum.request({ method: 'eth_requestAccounts' });
+        const accounts = await window.ethereum.request({ method: 'eth_requestAccounts' });
         const account = accounts[0];
         const txn = await contract.methods.sendToUser(walletAddress).send({ from: account });
         contract.events.LinkSent({ filter: { to: walletAddress } })
