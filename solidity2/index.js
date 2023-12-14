@@ -1,5 +1,6 @@
-import contractABI from "./abi.json";
-// const { default: Web3 } = require("web3");
+// import contractABI from "./abi.json";
+const contractABI = require("./abi.json");
+const Web3 = require('web3');
 
 const contractAddress = '0x68a14B3a0Ec10D56bc8040B379373f810C476871'; 
 
